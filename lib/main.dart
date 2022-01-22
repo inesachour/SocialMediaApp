@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialmediaapp/screens/authentication/onboarding.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: OnBoarding(),
     );
   }
 }
