@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialmediaapp/screens/authentication/onboarding.dart';
 
 void main() {
   runApp(MyApp());
