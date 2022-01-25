@@ -13,7 +13,6 @@ class OnBoarding extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double min = width < height ? width : height;
 
-
     return SafeArea(
       child: SizedBox(
         height: height,
