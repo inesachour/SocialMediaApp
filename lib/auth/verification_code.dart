@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:socialmediaapp/Widgets/HomeScreenAppBar.dart';
+import 'dart:async';
 
 import 'code_form.dart';
 
@@ -12,6 +15,26 @@ class VerificationCodePage extends StatefulWidget {
 }
 
 class VerificationCodePageState extends State<VerificationCodePage> {
+  static const max = 5;
+  int seconds = max;
+  Timer? timer; // type? var => variable can be null
+
+  void startTimer() {
+    //When to update the value of the timer
+    //+ The callback function
+    timer = Timer.periodic(Duration(seconds: 1), (_) {
+      // USE THE setState so the UI gets updated
+      setState(() => {
+          if(seconds == 0){
+            timer?.cancel()
+          }else {
+            seconds--
+          }
+        }
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +47,7 @@ class VerificationCodePageState extends State<VerificationCodePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //ElevatedButton(onPressed: () => startTimer(), child: Text("Run")),
               Text("Your code to the realm",
                 style: GoogleFonts.josefinSans(
                   textStyle: TextStyle(
@@ -40,7 +64,25 @@ class VerificationCodePageState extends State<VerificationCodePage> {
                 ),
               ),
               CodeForm(),
-              //TIMER
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Resend",
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                    ) ,
+                  ),
+                  Text(" In : "+seconds.toString(),
+                    style: TextStyle(
+                      color: Color(0xff0d1821),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  )
+                ],
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: Center(
@@ -95,4 +137,4 @@ class VerificationCodePageState extends State<VerificationCodePage> {
   }
 }
 
-//Try round button as avatar
+

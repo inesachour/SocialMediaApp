@@ -17,7 +17,7 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xffEBF2FA),
+      backgroundColor: Color(0xffF2F7F2),
       appBar: HomeScreenAppBar(),
       body:Padding(
         
