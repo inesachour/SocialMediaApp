@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialmediaapp/auth/verification_code.dart';
 import './auth/login.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
 
         )
       ),*/
-      home: LoginPage(),
+      home: VerificationCodePage(),
+      // LoginPage(),
     );
   }
 }

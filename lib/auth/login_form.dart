@@ -105,8 +105,8 @@ class LoginFormState extends State<LoginForm> {
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     colors: [
-                      Color(0xffC70000),
-                      Color(0xff211C8C),
+                      Color(0xff493657),
+                      Color(0xffA76FFF),
                     ],
                   ),
                 shape: BoxShape.rectangle,

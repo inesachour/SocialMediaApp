@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
+import 'package:socialmediaapp/Widgets/HomeScreenAppBar.dart';
 import 'package:socialmediaapp/auth/login_form.dart';
 
 class LoginPage extends StatefulWidget {
@@ -15,33 +16,9 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffEBF2FA),
-      appBar: AppBar(
-        elevation: 0,
-          backgroundColor: Colors.transparent,
-          toolbarHeight: 150,
-          leading: Padding(
-            padding: EdgeInsets.only(left: 25),
-            child: OutlinedButtonTheme(
-                data: OutlinedButtonThemeData(
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all<CircleBorder>(
-                          CircleBorder(
-                          ),
-                    )
-                  )
-                ),
-                child: OutlinedButton(
-                  onPressed: () {
-
-                  },
-                  child: Icon(Icons.arrow_back_ios_new_outlined,
-                    color: Colors.grey,
-                  ),
-                ),
-              ),
-          )
-          ),
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Color(0xffF2F7F2),
+      appBar: HomeScreenAppBar(),
       body:Padding(
         
         padding: EdgeInsets.only(left: 16,
@@ -61,7 +38,7 @@ class LoginPageState extends State<LoginPage> {
                   )
               ),
               Text(
-                "Enter your credentials miss girl !",
+                "Enter your credentials !",
                 style: GoogleFonts.barlow(
                   textStyle: TextStyle(
                     color: Colors.grey[600],
