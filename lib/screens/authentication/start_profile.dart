@@ -135,12 +135,12 @@ class _StartProfileState extends State<StartProfile> {
                 ],
               ),
             ),
-            SizedBox(height: height*0.08,),
+            SizedBox(height: height*0.09,),
             ElevatedButton(
               onPressed: (){},
               child: Text("Continue"),
               style: ButtonStyle(
-                fixedSize: MaterialStateProperty.all(Size(width < 800? 300 : 400 ,height*0.075)),
+                fixedSize: MaterialStateProperty.all(Size(width < 800? 300 : 450 ,height*0.08)),
                 backgroundColor: MaterialStateProperty.all<Color>(Color(0xffa76fff)),
                 shape:  MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
