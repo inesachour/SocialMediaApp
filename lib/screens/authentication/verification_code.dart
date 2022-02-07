@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:socialmediaapp/Widgets/HomeScreenAppBar.dart';
 import 'dart:async';
 
-import 'code_form.dart';
+import '../../Widgets/code_form.dart';
 
 class VerificationCodePage extends StatefulWidget {
   const VerificationCodePage({Key? key}) : super(key: key);
@@ -56,7 +56,7 @@ class VerificationCodePageState extends State<VerificationCodePage> {
                   ),
                 ),
               ),
-              Text("Entee the verification code sent to you by mail",
+              Text("Enter the verification code sent to you by mail",
                 style: GoogleFonts.josefinSans(
                   fontSize: 17,
                   fontWeight: FontWeight.w600,
