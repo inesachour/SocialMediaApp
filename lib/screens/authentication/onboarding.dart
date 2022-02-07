@@ -13,7 +13,6 @@ class OnBoarding extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double min = width < height ? width : height;
 
-
     return SafeArea(
       child: SizedBox(
         height: height,
@@ -104,7 +103,6 @@ class OnBoarding extends StatelessWidget {
 Widget Button (String socialMedia, icon,photo , int color,double width,double height) {
 
   width = width > 600 ? width*0.4 : width;
-  //height = height < 1000 ? height*0.9 : height;
 
   return ElevatedButton(
     onPressed: (){},
