@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:socialmediaapp/screens/authentication/onboarding.dart';
-import 'package:socialmediaapp/screens/authentication/start_profile.dart';
+import 'package:socialmediaapp/auth/verification_code.dart';
+import './auth/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: StartProfile(),
+      title: 'Login',
+      /*theme: ThemeData(
+        colorScheme: ColorScheme(
+
+        )
+      ),*/
+      home: VerificationCodePage(),
+      // LoginPage(),
     );
   }
 }
