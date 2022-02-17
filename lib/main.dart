@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:socialmediaapp/Enumerations/sort_by.dart';
 import 'package:socialmediaapp/screens/authentication/verification_code.dart';
+import 'package:socialmediaapp/screens/feed/feed.dart';
 import 'screens/authentication/login.dart';
 
 void main() {
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
           primaryVariant: Color(0xff493657),
           secondary: Color(0xffECA72C),
           onSecondary: Color(0xffffffff),
-          secondaryVariant: Color(0xff3D348B),
+          secondaryVariant: Color(0xff3d348b),
           background: Color(0xffF2F7F2),
           onBackground: Color(0xff0D1821),
           surface: Colors.transparent,
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         )
       ),
-      home: LoginPage(),
+      home: Feed(sortBy: SortBys.Trending),
     );
   }
 }
