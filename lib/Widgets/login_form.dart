@@ -28,7 +28,9 @@ class LoginFormState extends State<LoginForm> {
               contentPadding: EdgeInsets.symmetric(vertical: 20),
               prefixIcon: Padding(
                 padding: EdgeInsets.only(left: 25,right: 15),
-                child: Icon(FontAwesomeIcons.user),
+                child: Icon(FontAwesomeIcons.user,
+                  color: Theme.of(context).colorScheme.onBackground,
+                ),
               ) ,
               prefixIconColor: Color(0xff048A81),
               border: OutlineInputBorder(
@@ -105,8 +107,8 @@ class LoginFormState extends State<LoginForm> {
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     colors: [
-                      Color(0xff493657),
-                      Color(0xffA76FFF),
+                      Theme.of(context).colorScheme.primaryVariant,
+                      Theme.of(context).colorScheme.primary,
                     ],
                   ),
                 shape: BoxShape.rectangle,
