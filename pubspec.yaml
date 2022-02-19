@@ -36,7 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.2.0
   image_picker: ^0.8.4+5
-  google_fonts: ^2.2.0
+  google_fonts: 2.2.0
+  intl: ^0.17.0
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +64,7 @@ flutter:
 
   assets:
     - assets/logos/
+    - assets/images/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

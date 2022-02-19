@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
-import 'package:socialmediaapp/Widgets/HomeScreenAppBar.dart';
+import 'package:socialmediaapp/Widgets/home_screen_app_bar.dart';
 import 'package:socialmediaapp/Widgets/login_form.dart';
 
 class LoginPage extends StatefulWidget {

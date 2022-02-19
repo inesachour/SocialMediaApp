@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:socialmediaapp/Widgets/HomeScreenAppBar.dart';
+import 'package:socialmediaapp/Widgets/home_screen_app_bar.dart';
 import 'dart:async';
 
 import '../../Widgets/code_form.dart';

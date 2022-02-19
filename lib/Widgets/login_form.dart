@@ -69,7 +69,7 @@ class LoginFormState extends State<LoginForm> {
                 prefixIcon: Padding(
                   padding: EdgeInsets.only(left: 25,right: 15),
                   child: Icon(FontAwesomeIcons.lock),
-                ) ,
+                ),
                 prefixIconColor: Color(0xff98C1D9),
                 border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xff98C1D9),
