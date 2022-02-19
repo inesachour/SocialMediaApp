@@ -39,7 +39,7 @@ class OnBoarding extends StatelessWidget {
                       SizedBox(height : height*0.07),
                       Button("Apple", FontAwesomeIcons.apple,null ,0xff000000, width,height), //TODO sign in with apple
                       SizedBox(height : height*0.02),
-                      Button("Google", null, "google.png", 0xff034078,width,height), //TODO sign in with google
+                      Button("Google", null, "google.jpg", 0xff034078,width,height), //TODO sign in with google
                       SizedBox(height : height*0.02),
                       Button("Email", Icons.email,null, 0xffe23f36,width,height), //TODO sign in with email
                       SizedBox(height: height*0.04,),
@@ -121,7 +121,7 @@ Widget Button (String socialMedia, icon,photo , int color,double width,double he
 
         Expanded(
           flex: 1,
-          child:icon !=null? Icon(icon, size: width*0.065,): Image.asset("assets/logos/google.png",height: width*0.06,),
+          child:icon !=null? Icon(icon, size: width*0.065,): Image.asset("assets/logos/google.jpg",height: width*0.06,),
         ),
         Expanded(
           flex: 6,
