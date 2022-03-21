@@ -8,52 +8,61 @@ class Comments extends StatefulWidget {
 }
 
 class _CommentsState extends State<Comments> {
+
   @override
   Widget build(BuildContext context) {
 
-    return Dismissible(
-      direction: DismissDirection.vertical,
-      key: const Key('key'),
-      onDismissed: (_) => Navigator.of(context).pop(),
-      child: Material(
-        child: Column(
-          children: [
+    double height = MediaQuery.of(context).size.height;
 
-            Expanded(
-              flex: 1,
-              child: Container(
-                child: Icon(Icons.linear_scale_outlined),
-              ),
-            ),
+    return Container(
+      color: Colors.black.withOpacity(0.5),
+      child: Padding(
+        padding: EdgeInsets.only(top: height*0.2),
+        child: Dismissible(
+          direction: DismissDirection.vertical,
+          key: const Key('key'),
+          onDismissed: (_) => Navigator.of(context).pop(),
+          child: Material(
+            borderRadius: BorderRadius.only(topRight: Radius.circular(30),topLeft: Radius.circular(30)),
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: Icon(Icons.linear_scale_outlined),
+                  ),
+                ),
 
-            Expanded(
-                //height: MediaQuery.of(context).size.height*0.82,
-              flex: 10,
-                child: ListView.builder(
-                    itemCount: 50,
-                    itemBuilder: (context,index){
-                      return CommentCard("name name", "20 mins ago");
-                    }
-                )
-            ),
+                Expanded(
+                    //height: MediaQuery.of(context).size.height*0.82,
+                  flex: 30,
+                    child: ListView.builder(
+                        itemCount: 5,
+                        itemBuilder: (context,index){
+                          return CommentCard("name name", "20 mins ago");
+                        }
+                    )
+                ),
 
-            Expanded(
-              flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.send),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(0),
-                        borderSide: BorderSide(width: 1)
+                Expanded(
+                  flex: 4,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        suffixIcon: Icon(Icons.send),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0),
+                            borderSide: BorderSide(width: 1)
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
-          ],
-        )
+              ],
+            )
+          ),
+        ),
       ),
     );
   }
@@ -65,6 +74,9 @@ Widget CommentCard(String name, String time){
   return Card(
     margin: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
     color: Colors.grey[200],
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(20))
+    ),
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30,vertical:15 ),
       child: Column(
@@ -72,17 +84,31 @@ Widget CommentCard(String name, String time){
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CircleAvatar(
-                backgroundColor: Colors.transparent,
-                child: Image.asset("assets/logos/google.jpg",width: 30,),
+              Expanded(
+                flex: 2,
+                child: CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset("assets/logos/google.jpg",width: 30,),
+                ),
               ),
-              Text(name,style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700) ,),
-              SizedBox(width: 2,),
-              Text(time,style: TextStyle(color: Colors.grey),),
-              SizedBox(width: 60,),
-              Icon(Icons.more_horiz,color: Colors.grey,),
+              SizedBox(width: 7,),
+              Expanded(
+                  flex:10,
+                  child: Text(name,style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700) ,)
+              ),
+             // SizedBox(width: 2,),
+              Expanded(
+                  flex:9,
+                  child: Text(time,style: TextStyle(color: Colors.grey),)
+              ),
+              //SizedBox(width: 60,),
+              Expanded(
+                  flex:2,
+                  child: Icon(Icons.more_horiz,color: Colors.grey,)
+              ),
+
             ],
           ),
           SizedBox(height: 10,),
