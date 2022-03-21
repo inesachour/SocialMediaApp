@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:socialmediaapp/screens/feed/comments.dart';
 
 class Details extends StatefulWidget {
   const Details({Key? key}) : super(key: key);
@@ -13,6 +13,15 @@ class _DetailsState extends State<Details> {
 
   @override
   Widget build(BuildContext context) {
+
+    _show(){
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return Comments();
+          }
+      );
+    }
 
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -59,17 +68,18 @@ class _DetailsState extends State<Details> {
         backgroundColor: Theme.of(context).colorScheme.primary,
 
         items: [
-          PostStatus(CupertinoIcons.heart_fill, "1k" ,""),
-          PostStatus(CupertinoIcons.chat_bubble_fill, "500" ,""),
-          PostStatus(CupertinoIcons.arrowshape_turn_up_right_fill, "1k" ,""),
-          PostStatus(CupertinoIcons.bookmark_fill, "" ,""),
+          PostStatus(CupertinoIcons.heart_fill, "1k" ,"",(){}),
+          PostStatus(CupertinoIcons.chat_bubble_fill, "500" ,"",_show),
+          PostStatus(CupertinoIcons.arrowshape_turn_up_right_fill, "1k" ,"",(){}),
+          PostStatus(CupertinoIcons.bookmark_fill, "" ,"",(){}),
         ],
       ),
     );
   }
 
 
-  BottomNavigationBarItem PostStatus(icon,String text, String label){
+
+  BottomNavigationBarItem PostStatus(icon,String text, String label, Function f){
 
     return BottomNavigationBarItem(
       label: label,
@@ -78,7 +88,7 @@ class _DetailsState extends State<Details> {
           elevation: MaterialStateProperty.all(0),
           backgroundColor: MaterialStateProperty.all(Colors.transparent),
         ),
-        onPressed: (){},
+        onPressed: (){f();},
         icon: Icon(icon,color: Colors.white,),
         label: Text(text,style: TextStyle(color: Colors.white),),
       ),
@@ -93,8 +103,10 @@ class _DetailsState extends State<Details> {
           flex: 1,
           child: CircleAvatar(
             radius: width < 1000? width*0.08 : 75,
-            backgroundImage: Image.asset("insert").image,
+            //backgroundImage: Image.asset("assets/logos/google.jpg").image,
             backgroundColor: Colors.transparent,
+            child: Image.asset("assets/logos/google.jpg",fit: BoxFit.cover,),
+
           ),
         ),
         Expanded(
@@ -174,7 +186,7 @@ class _DetailsState extends State<Details> {
               )
             ),
             child: Image.asset(
-              'inset',
+              'assets/logos/google.jpg',
               width: width*0.85,
               fit: BoxFit.contain,
 

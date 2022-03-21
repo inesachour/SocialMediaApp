@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialmediaapp/screens/feed/comments.dart';
 import 'package:socialmediaapp/screens/feed/details.dart';
 
 void main() {
