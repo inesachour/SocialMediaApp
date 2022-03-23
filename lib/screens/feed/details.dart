@@ -30,7 +30,7 @@ class _DetailsState extends State<Details> {
       backgroundColor: Theme.of(context).colorScheme.background ,
       appBar:AppBar(
         elevation: 0,
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.secondaryVariant,
         leading: IconButton(
           icon :Icon(Icons.arrow_back_ios_outlined, color: Colors.white,),
           splashColor: Colors.transparent,
@@ -65,7 +65,7 @@ class _DetailsState extends State<Details> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.secondaryVariant,
 
         items: [
           PostStatus(CupertinoIcons.heart_fill, "1k" ,"",(){}),

@@ -50,7 +50,13 @@ class _CommentsState extends State<Comments> {
                     padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
                     child: TextField(
                       decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.send),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Theme.of(context).colorScheme.primary
+                          )
+                        ),
+
+                        suffixIcon: Icon(Icons.send,),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(0),
                             borderSide: BorderSide(width: 1)
