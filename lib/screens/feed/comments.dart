@@ -13,6 +13,7 @@ class _CommentsState extends State<Comments> {
   Widget build(BuildContext context) {
 
     double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
 
     return Container(
       color: Colors.black.withOpacity(0.5),
@@ -27,15 +28,20 @@ class _CommentsState extends State<Comments> {
             child: Column(
               children: [
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Container(
-                    child: Icon(Icons.linear_scale_outlined),
+                    child: Divider(
+                      thickness: 3,
+                      indent: width*0.45,
+                      endIndent: width*0.45,
+                      color: Colors.grey,
+                    ),
                   ),
                 ),
 
                 Expanded(
                     //height: MediaQuery.of(context).size.height*0.82,
-                  flex: 30,
+                  flex: 31,
                     child: ListView.builder(
                         itemCount: 5,
                         itemBuilder: (context,index){
@@ -50,6 +56,7 @@ class _CommentsState extends State<Comments> {
                     padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
                     child: TextField(
                       decoration: InputDecoration(
+                        labelText: "Write your comment",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Theme.of(context).colorScheme.primary
