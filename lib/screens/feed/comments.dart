@@ -59,10 +59,13 @@ class _CommentsState extends State<Comments> {
                         labelText: "Write your comment",
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Theme.of(context).colorScheme.primary
+                            color: Colors.grey
                           )
                         ),
-
+                        labelStyle: TextStyle(
+                          color: Colors.grey
+                        ),
+                        suffixIconColor: Colors.grey,
                         suffixIcon: Icon(Icons.send,),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(0),
